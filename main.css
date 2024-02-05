@@ -1,0 +1,45 @@
+body{
+    
+
+    #mainscreen
+    {
+    height: 1080;
+    width: 1920;
+    }
+    
+    
+    
+    #title
+    {
+     width: 50px;
+    margin: 1% 2% 0% 50%;
+    color: blue;
+    background-color: gray;
+    opacity: 80;
+    }
+     #playScreen
+     {
+        position: relative;
+        width: 1680px;
+        height: 720px;
+     }   
+
+     #leftCornerBox
+     {
+        width: 80px;
+        height: 80px;
+        margin: 20px 400px 180px 72px;
+        background-color: brown;
+        opacity: 75;
+        float: left;
+     }
+     
+     #rightCornerBox{
+        width: 80px;
+        height: 80px;
+        margin: 20px 200px 180px 1143px;
+        background-color: brown;
+        opacity: 75;
+        float: left;
+     }
+    }
