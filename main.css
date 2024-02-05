@@ -1,45 +1,72 @@
-body{
-    
+body {
+    display: grid;
+    grid-template-columns: auto 1000px auto;
+    grid-template-rows: auto 600px;
+    gap: 20px;
+    margin: 0px;
+    background-color: rgb(66, 47, 47);
+}
 
-    #mainscreen
-    {
-    height: 1080;
-    width: 1920;
-    }
-    
-    
-    
-    #title
-    {
-     width: 50px;
-    margin: 1% 2% 0% 50%;
-    color: blue;
-    background-color: gray;
-    opacity: 80;
-    }
-     #playScreen
-     {
-        position: relative;
-        width: 1680px;
-        height: 720px;
-     }   
+/* #mainscreen {
+        height: 1080px;
+        width: 1920px;
+    } */
 
-     #leftCornerBox
-     {
-        width: 80px;
-        height: 80px;
-        margin: 20px 400px 180px 72px;
-        background-color: brown;
-        opacity: 75;
-        float: left;
-     }
-     
-     #rightCornerBox{
-        width: 80px;
-        height: 80px;
-        margin: 20px 200px 180px 1143px;
-        background-color: brown;
-        opacity: 75;
-        float: left;
-     }
-    }
+#playScreen {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#title {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    text-align: center;
+    color: white;
+
+
+}
+
+#inventoryBox {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: green;
+    opacity: 0.75;
+}
+
+#leftCornerBox {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 90px;
+    left: 250px;
+    background-color: brown;
+    opacity: 0.75;
+}
+
+#rightCornerBox {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 90px;
+    right: 250px;
+    background-color: brown;
+    opacity: 0.75;
+}
+
+#bottomBar {
+    width: 1000px;
+    height: 20px;
+    position: absolute;
+    bottom: 65px;
+    left: 237px;
+    background-color: brown;
+    opacity: 0.90;
+}
