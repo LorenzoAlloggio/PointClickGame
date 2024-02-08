@@ -32,7 +32,7 @@ body{
 #mainCharacter{
     width: 32px;
     height: 64px;
-    background-color: aquamarine;
+    background-color: #0084ff;
     left: 400px;
     top: 300px;
 }
@@ -45,6 +45,14 @@ body{
     opacity: 0.8;
     top: 150px;
     left: 400px;
+}
+
+#sign{
+    width: 64px;
+    height: 32px;
+    background-color: #af4f00;
+    top: 450px;
+    left: 10px;
 }
 
 /*Inventory Box */
@@ -91,6 +99,13 @@ body{
     height: 100px;
 }
  
+#tilemap{
+    width: 800px;
+    height: 600px;
+    top: 0px;
+    left: 0px;
+}
+
 /*Classes*/
 .foreground{
     position: absolute;

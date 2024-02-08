@@ -7,6 +7,9 @@ const gameWindow = document.getElementById("gameWindow");
 const mainCharacter = document.getElementById("mainCharacter");
 const offsetCharacter = 16;
 
+//Foreground items
+const door1 = document.getElementById("door1");
+
 gameWindow.onclick = function(e){
     var rect = gameWindow.getBoundingClientRect();
     var X = e.clientX - rect.left;
@@ -15,7 +18,23 @@ gameWindow.onclick = function(e){
     mainCharacter.style.left = X - offsetCharacter + "px";
     mainCharacter.style.top = Y - offsetCharacter + "px";
 
-    if(e.target.id == "door1"){
-        console.log("Open door.");
+    switch(e.target.id){
+        case "door1":
+            mainCharacter.style.backgroundColor = "#FF0000"
+            door1.style.opacity = 0.5;
+            break;
+
+            case "sign":
+                mainCharacter.style.backgroundColor = "#FF0000"
+                door1.style.opacity = 0.5;
+                sign.style.opacity = 1;
+                break;
+            
+            default:
+                //explode
+                mainCharacter.style.backgroundColor = "#0084ff";
+        door1.style.opacity = 1;
+        sign.style.opacity = 1;
+                break;
     }
 }
