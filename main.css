@@ -36,6 +36,18 @@ body{
     left: 400px;
     top: 300px;
 }
+
+/*Foreground items */
+#door1{
+    width: 64px;
+    height: 64px;
+    background-color: #d400ff;
+    opacity: 0.8;
+    top: 150px;
+    left: 400px;
+}
+
+/*Inventory Box */
 #inventoryBox{
     position: relative;
     display: block;
@@ -88,6 +100,7 @@ body{
 .heroCharacter{
     position: absolute;
     z-index: 100;
+    transition: all 1s ease-in-out;
 }
  
  

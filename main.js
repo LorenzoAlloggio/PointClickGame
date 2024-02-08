@@ -14,4 +14,8 @@ gameWindow.onclick = function(e){
     console.log(e.target.id);
     mainCharacter.style.left = X - offsetCharacter + "px";
     mainCharacter.style.top = Y - offsetCharacter + "px";
+
+    if(e.target.id == "door1"){
+        console.log("Open door.");
+    }
 }
