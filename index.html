@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+   
     <title>Point and Click Adventure</title>
 </head>
 <body>
-    <div id="title">
-        <h2>Title</h2>
+    <div id="title"><h1></h1></div>
+    <div id="gameWindow">
+        <div id="dialogueBar" class="foreground">
+            <div id="setMainDialogue">
+                <div id="mainCharacterSpeech" class="foreground"></div>
+                <div id="counterSpeech" class="foreground"></div>
+                <div id="brownBar"></div>
+            </div>
+        </div>
+        <div id="inventoryBox">
+            <p>Inventory</p>
+            <ul id="inventoryList">
+ 
+            </ul>
+        </div>
+          <div id="mainCharacter" class="heroCharacter">
+ 
+          </div>
+ 
+        <!--Background-->
+        <div id="tilemap" class="background">
+ 
+        </div>
     </div>
-    <div id="mainScreen"></div>
-    <div id="playScreen"></div>
-    <div id="bottomBar"></div>
-    <div id="inventoryBox"></div>
-    <div id="leftCornerBox"></div>
-    <div id="rightCornerBox"></div>
-    <script src="main.js"></script>
+   
+   
+ <script src="main.js"></script>
 </body>
 </html>

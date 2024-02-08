@@ -1,72 +1,94 @@
-body {
-    display: grid;
-    grid-template-columns: auto 1000px auto;
-    grid-template-rows: auto 600px;
+body{
+    display:grid;
+    grid-template-columns: auto 800px auto;
+    grid-template-rows: auto 550px auto;
     gap: 20px;
     margin: 0px;
-    background-color: rgb(66, 47, 47);
+    background-color: black ;
 }
-
-/* #mainscreen {
-        height: 1080px;
-        width: 1920px;
-    } */
-
-#playScreen {
-    position: absolute;
-    width: 1000px;
-    height: 600px;
-    background-color: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#title {
+ 
+ 
+#title{
     grid-column-start: 2;
     grid-row-start: 1;
     text-align: center;
+    font: 500;
+    font-family:Arial, Helvetica, sans-serif;
     color: white;
-
-
 }
-
-#inventoryBox {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: green;
-    opacity: 0.75;
+ 
+#gameWindow{
+    position: relative;
+    width: 800px;
+    height: 550px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    background-color: blue;
+ 
 }
-
-#leftCornerBox {
-    width: 80px;
-    height: 80px;
+ 
+/*Main Character*/
+#mainCharacter{
+    width: 32px;
+    height: 64px;
+    background-color: aquamarine;
+}
+#inventoryBox{
+    position: relative;
+    display: block;
+    left: 10px;
+    top: 10px;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(72, 27, 0);
+    color: white;
+    border: white 1px solid;
+    padding: 10px;
+   
+}
+#dialogueBar{
+    bottom: 0px;
+}
+#setMainDialogue{
+    position: relative;
+    height: 64px;
+    width: 800px;
+}
+#brownBar{
     position: absolute;
-    bottom: 90px;
-    left: 250px;
+    height: 32px;
+    width: 800px;
     background-color: brown;
-    opacity: 0.75;
+    bottom: 0px;
 }
-
-#rightCornerBox {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    bottom: 90px;
-    right: 250px;
-    background-color: brown;
-    opacity: 0.75;
+#mainCharacterSpeech{
+  left: 0;
+  bottom: 0;
+  background-color: red;
+  width: 100px;
+  height: 100px;
 }
-
-#bottomBar {
-    width: 1400px;
-    height: 20px;
+#counterSpeech{
+    right: 0px;
+    bottom: 0px;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+ 
+/*Classes*/
+.foreground{
     position: absolute;
-    bottom: 65px;
-    left: 237px;
-    background-color: brown;
-    opacity: 0.90;
+    z-index: 1000;
+}
+ 
+.heroCharacter{
+    position: absolute;
+    z-index: 100;
+}
+ 
+ 
+.background{
+    position: absolute;
+    z-index: 0;
 }
