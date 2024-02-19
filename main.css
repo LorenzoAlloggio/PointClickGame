@@ -47,6 +47,15 @@ body{
     left: 400px;
 }
 
+#key1{
+    width: 32px;
+    height: 32px;
+    background-color: #d9ff00;
+    opacity: 0.8;
+    top: 165px;
+    left: 417px;
+}
+
 #sign{
     width: 64px;
     height: 32px;
