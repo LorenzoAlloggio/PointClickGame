@@ -19,6 +19,11 @@ gameWindow.onclick = function(e){
     mainCharacter.style.top = Y - offsetCharacter + "px";
 
     switch(e.target.id){
+
+        case "key1":
+            console.log("found key")
+            break;
+
         case "door1":
             mainCharacter.style.backgroundColor = "#FF0000"
             door1.style.opacity = 0.5;
