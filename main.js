@@ -1,56 +1,63 @@
 document.getElementById("title").innerText = "Point and Click Adventure game";
 //game window reference
 const gameWindow = document.getElementById("gameWindow");
- 
+
 //Game state
 let gameState = {
     "door2locked": true,
     "inventory": [
-        "banana",
-        "Apple"
+
     ]
- 
+
 }
- 
+
+const sec = 4000; // time in milliseconds
+
 //Main Character
 const mainCharacter = document.getElementById("mainCharacter");
 const offsetCharacter = 16;
- 
+
+//speech bubbles
+const mainCharacterSpeech = document.getElementById("mainCharacterSpeech")
+const counterSpeech = document.getElementById("counterSpeech")
+
 //Inventory
 const inventoryBox = document.getElementById("inventoryBox")
 const inventoryList = document.getElementById("inventoryList")
- 
+
 //Foreground items
 const door1 = document.getElementById("door1");
 const sign = document.getElementById("sign");
- 
+
 updateInventory(gameState.inventory, inventoryList);
- 
- 
+
+
 gameWindow.onclick = function (e) {
     var rect = gameWindow.getBoundingClientRect();
     var x = e.clientX - rect.left;
     var y = e.clientY - rect.top;
+
+    if (e.target.id !== "mcImage") {
+        mainCharacter.style.left = x - offsetCharacter + "px";
+        mainCharacter.style.top = y - offsetCharacter + "px";
+    }
+
+
     console.log(e.target.id);
-    mainCharacter.style.left = x - offsetCharacter + "px";
-    mainCharacter.style.top = y - offsetCharacter + "px";
- 
- 
     switch (e.target.id) {
         case "door1":
- 
-            mainCharacter.style.backgroundColor = "#FFFF00";
+
             door1.style.opacity = 0.5;
             sign.style.opacity = 1;
- 
+
             if (document.getElementById("key1") !== null) {
                 console.log("Found Key!");
                 document.getElementById("key1").remove();
                 changeInventory('Key', 'add');
- 
- 
+
+
             } break;
- 
+
         case "door2":
             if (gameState.door2locked == true) {
                 //check wether we have key
@@ -59,7 +66,7 @@ gameWindow.onclick = function (e) {
                     gameState.door2locked = false;
                     changeInventory('Key', 'delete');
                     console.log("Door is now open.");
- 
+
                 } else {
                     //no -> alert 'door locked'
                     alert('Door is locked');
@@ -67,33 +74,31 @@ gameWindow.onclick = function (e) {
             } else {
                 console.log('Enter building');
             }
- 
+
             break;
- 
- 
- 
+
+
+
         case "sign":
- 
-            mainCharacter.style.backgroundColor = "#00FF00";
+
             sign.style.opacity = 0.5;
             door1.style.opacity = 1;
- 
+
             break;
- 
+
         default:
             //explode
-            mainCharacter.style.backgroundColor = "#7FFFD4"
             door1.style.opacity = 1;
             sign.style.opacity = 1;
             break;
- 
+
     }
- 
+
     updateInventory(gameState.inventory, inventoryList);
- 
- 
+
+
 }
- 
+
 /**
  * function to change inventory
  * @param {string} itemName
@@ -105,13 +110,13 @@ function changeInventory(itemName, action) {
         console.log("Wrong parameters given to changeInventory");
         return
     }
- 
+
     switch (action) {
         case 'add':
             gameState.inventory.push(itemName);
- 
+
             break;
- 
+
         case 'delete':
             gameState.inventory.find(function (item, index) {
                 if (item == itemName) {
@@ -119,11 +124,11 @@ function changeInventory(itemName, action) {
                     if (index !== -1) {
                         gameState.inventory.splice(index, 1);
                     }
- 
+
                 }
             })
             break;
- 
+
         default:
             break;
     }
@@ -141,9 +146,35 @@ function updateInventory(inventory, inventoryList) {
         inventoryItem.id = "inv-" + item;
         inventoryItem.innerText = item;
         inventoryList.appendChild(inventoryItem);
- 
+
     })
- 
- 
- 
+
+
+
 }
+/**
+ * Show a message in a speech Bubble
+ * @param {*} targetBalloon
+ * @param {string} message 
+ */
+function showMessage(targetBalloon, message) {
+    targetBalloon.style.opacity = "1";
+    targetBalloon.innerText = message;
+    setTimeout(hideMessage, 2 * sec, targetBalloon)
+}
+
+/**
+ * Set the opacity to 0
+ * @param {string} targetBalloon 
+ */
+function hideMessage(targetBalloon) {
+    targetBalloon.style.opacity = "0";
+}
+
+
+
+//showMessage("mainCharacterspeech");
+// showMessage("Counterspeech");
+setTimeout(showMessage, 1 * sec, mainCharacterSpeech, "hello");
+setTimeout(showMessage, 2 * sec, counterSpeech, "hello");
+
