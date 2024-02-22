@@ -31,6 +31,7 @@ body {
 #mainCharacter {
     width: 32px;
     height: 32px;
+    /*background-color: #7FFFD4;*/
     left: 400px;
     top: 304px;
 }
@@ -39,10 +40,10 @@ body {
 #door1 {
     width: 64px;
     height: 64px;
-    background-color: rgb(255, 0, 0);
+    /*background-color: rgb(255, 0, 0);*/
     opacity: 1;
-    top: 150px;
-    left: 400px;
+    top: 65px;
+    left: 480px;
 }
  
 #door2 {
@@ -57,10 +58,10 @@ body {
 #key1 {
     width: 32px;
     height: 32px;
-    background-color: rgb(0, 255, 255);
+    /*background-color: rgb(0, 255, 255);*/
     opacity: 1;
-    top: 164px;
-    left: 416px;
+    top: 110px;
+    left: 306px;
 }
  
 #sign {
@@ -69,6 +70,16 @@ body {
     background-color: beige;
     top: 400px;
     left: 20px;
+}
+ 
+#statue {
+    width: 32px;
+    height: 64px;
+    /*background-color: rgb(124, 36, 51);*/
+    opacity: 1;
+    top: 285px;
+    left: 704px;
+ 
 }
  
 /*Inventory*/
@@ -86,6 +97,9 @@ body {
  
 }
  
+ 
+ 
+/*Dialogue part*/
 #dialogueBar {
     bottom: 0px;
 }
@@ -104,7 +118,6 @@ body {
     bottom: 0px;
 }
  
-/*Dialogue part*/
 #mainCharacterAvatar {
     left: 0px;
     bottom: 0px;
@@ -122,9 +135,13 @@ body {
 #counterAvatar {
     right: 0px;
     bottom: 0px;
-    background-color: red;
-    width: 100px;
-    height: 100px;
+    /*background-color: red;*/
+    width: 72px;
+    height: 68px;
+}
+ 
+#counterAvatarImg {
+    opacity: 0;
 }
  
 #counterSpeech {
@@ -168,6 +185,7 @@ body {
     padding: 5px 5px 5px 20px;
     font-size: 15px;
     width: 300px;
-    transition: all 1s ease-in-out;
     opacity: 0;
+    transition: all 1s ease-in-out;
+ 
 }

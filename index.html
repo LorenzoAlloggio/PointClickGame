@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/style.css">
  
     <title>Point and Click Adventure</title>
 </head>
@@ -15,11 +15,14 @@
         <div id="dialogueBar" class="foreground">
             <div id="setMainDialogue">
                 <div id="mainCharacterAvatar" class="foreground">
-                    <img src="assets/Entities/portairt.png" alt="Main Character Avatar">
+                    <img src="C:\Software development\P3WebGame\P3WebGame\img\portrait.png" alt="Main Character Avatar">
                 </div>
                 <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
                 <div id="counterSpeech" class="foreground speech-bubble">...</div>
-                <div id="counterAvatar" class="foreground"></div>
+                <div id="counterAvatar" class="foreground">
+                    <img id="counterAvatarImg" src="C:\Software development\P3WebGame\P3WebGame\img\portraitStatue.png"
+                        alt="Counter Avatar">
+                </div>
                 <div id="brownBar"></div>
             </div>
         </div>
@@ -35,24 +38,32 @@
         <div id="door1" class="foreground"></div>
         <div id="door2" class="foreground"></div>
         <div id="sign" class="foreground"></div>
+        <div id="statue" class="foreground"></div>
  
  
         <!--Main Character-->
         <div id="mainCharacter" class="heroCharacter">
-            <img id="mcImage" src="assets/Entities/animated-character-1-idle.gif"
+            <img id="mcImage" src="C:\Software development\P3WebGame\P3WebGame\img\animated-character-1-idle.gif"
                 alt="main character">
  
         </div>
  
         <!--Background-->
         <div id="tilemap" class="background">
-            <img src="assets/Tilemaps/tilemap1.jpg" draggable="false"
+            <img src="C:\Software development\P3WebGame\P3WebGame\img\tilemap1.jpg" draggable="false"
                 alt="tilemap level 1">
         </div>
     </div>
  
+    <audio id="mcAudio">
+        <source src="C:\Software development\P3WebGame\P3WebGame\Audio\Gibberish - Sound Effect_01.mp3"
+            type="audio/mpeg">
+    </audio>
+    <audio id="counterAudio">
+        <source src="C:\Software development\P3WebGame\P3WebGame\Audio\high pitch voice.mp3" type="audio/mpeg">
+    </audio>
  
-    <script src="main.js"></script>
+    <script src="C:\Software development\P3WebGame\P3WebGame\js\main.js"></script>
 </body>
  
 </html>
