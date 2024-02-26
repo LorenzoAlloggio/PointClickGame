@@ -1,15 +1,36 @@
 document.getElementById("title").innerText = "Point and Click Adventure game";
-//game window reference
-const gameWindow = document.getElementById("gameWindow");
- 
+
+
 //Game state
 let gameState = {
     "door2locked": true,
-    "inventory": [
- 
-    ]
+    "inventory": []
  
 }
+
+if(typeof(Storage) !== "undefined"){
+// code for localstorage/ sessionstorage
+
+    // check if gamestate already exists
+if(localStorage.gameState){
+// load savegame into local variable
+gameState = JSON.parse(localStorage.gameState);
+}
+else {
+    // save local gamestate into browser storage
+    localStorage.setItem("gameState", JSON.stringify(gameState))
+}
+
+}
+else{
+    // no web storage
+    alert('Your browser does not support web storage. Please use a modern browser');
+}
+
+//game window reference
+const gameWindow = document.getElementById("gameWindow");
+ 
+
 const sec = 1000;
  
 //Main Character
@@ -90,14 +111,14 @@ gameWindow.onclick = function (e) {
         case "statue":
             showMessage(mainCharacterSpeech, mcAudio, "Wow, a cool statue!");
             setTimeout(function () { counterAvatarImg.style.opacity = 1 }, 2 * sec);
-            setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Hello... Person");
-            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "YOU CAN TALK?!");
+            setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Hello... Player");
+            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "You can talk...?");
             setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "Yes.. wait you can hear me?");
-            setTimeout(showMessage, 16 * sec, mainCharacterSpeech, mcAudio, "Yes i can! this is amazing.");
+            setTimeout(showMessage, 16 * sec, mainCharacterSpeech, mcAudio, "Yeah I can");
             setTimeout(showMessage, 20 * sec, counterSpeech, counterAudio, "This has never happened before..");
-            setTimeout(showMessage, 24 * sec, mainCharacterSpeech, mcAudio, "Could you help me find the key to the left house?");
-            setTimeout(showMessage, 28 * sec, counterSpeech, counterAudio, "Go to the well, there is a key hidden in there.");
-            setTimeout(showMessage, 32 * sec, mainCharacterSpeech, mcAudio, "Thank you!!");
+            setTimeout(showMessage, 24 * sec, mainCharacterSpeech, mcAudio, "How do I unlock the left house?");
+            setTimeout(showMessage, 28 * sec, counterSpeech, counterAudio, "Go to the right house, there is a key hidden in there.");
+            setTimeout(showMessage, 32 * sec, mainCharacterSpeech, mcAudio, "Thanks!");
  
             setTimeout(function () { counterAvatarImg.style.opacity = 0 }, 36 * sec);
             break;
@@ -198,5 +219,10 @@ function hideMessage(targetBalloon, targetSound) {
 //setTimeout(showMessage, 1 * sec, mainCharacterSpeech, "hey what's up");
 //setTimeout(showMessage, 2 * sec, counterSpeech, "Yo buddy");
  
-showMessage()
- 
+/**
+ * 
+ * @param {object} gameState 
+ */
+function saveToBrowser(gameState){
+    localStorage.gameState = JSON.stringify(gameState);
+}
