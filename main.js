@@ -4,8 +4,8 @@ document.getElementById("title").innerText = "Point and Click Adventure game";
 //Game state
 let gameState = {
     "door2locked": true,
-    "inventory": []
- 
+    "inventory": [],
+    "keyPickedUp": false
 }
 
 if(typeof(Storage) !== "undefined"){
@@ -25,6 +25,10 @@ else {
 else{
     // no web storage
     alert('Your browser does not support web storage. Please use a modern browser');
+}
+
+if(localStorage.keyPickedUp){
+    document.getElementById("key1").remove();
 }
 
 //game window reference
@@ -76,6 +80,7 @@ gameWindow.onclick = function (e) {
             if (document.getElementById("key1") !== null) {
                 console.log("Found Key!");
                 document.getElementById("key1").remove();
+                gameState.keyPickedUp = true
                 changeInventory('Key', 'add');
  
  
