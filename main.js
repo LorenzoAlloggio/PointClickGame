@@ -8,6 +8,7 @@ let gameState = {
     "keyPickedUp": false
 }
 
+//localStorage.removeItem(JSON.stringify(gameState)); //clear local storage
 if(typeof(Storage) !== "undefined"){
 // code for localstorage/ sessionstorage
 
@@ -27,7 +28,7 @@ else{
     alert('Your browser does not support web storage. Please use a modern browser');
 }
 
-if(localStorage.keyPickedUp){
+if(gameState.keyPickedUp){
     document.getElementById("key1").remove();
 }
 
@@ -82,6 +83,7 @@ gameWindow.onclick = function (e) {
                 document.getElementById("key1").remove();
                 gameState.keyPickedUp = true
                 changeInventory('Key', 'add');
+                saveToBrowser(gameState);
  
  
             } break;
