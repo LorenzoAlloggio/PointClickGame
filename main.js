@@ -89,7 +89,7 @@ gameWindow.onclick = function (e) {
             } break;
  
         case "door2":
-            if (gameState.door2locked == true) {
+            if (gameState.door2locked === true) {
                 //check wether we have key
                 if (document.getElementById("inv-Key") !== null) {
                     //yes -> unlock door?
@@ -163,7 +163,7 @@ function changeInventory(itemName, action) {
  
         case 'delete':
             gameState.inventory.find(function (item, index) {
-                if (item == itemName) {
+                if (item === itemName) {
                     var index = gameState.inventory.indexOf(item);
                     if (index !== -1) {
                         gameState.inventory.splice(index, 1);

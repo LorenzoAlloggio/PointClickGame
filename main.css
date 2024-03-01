@@ -3,7 +3,7 @@ body {
     grid-template-columns: auto 800px auto;
     grid-template-rows: auto 550px auto;
     gap: 20px;
-    margin: 0px;
+    margin: 0;
     background-color: black;
 }
  
@@ -73,14 +73,15 @@ body {
  
 #statue {
     width: 32px;
-    height: 64px;
-    background-color: rgb(124, 36, 51);
+    height: 28px;
+    /*background-color: rgb(124, 36, 51);*/
     opacity: 1;
     top: 285px;
     left: 704px;
+    background-image: url("assets/Map_Items/Sign.png");
  
 }
- 
+
 /*Inventory*/
 #inventoryBox {
     position: relative;
@@ -100,7 +101,7 @@ body {
  
 /*Dialogue part*/
 #dialogueBar {
-    bottom: 0px;
+    bottom: 0;
 }
  
 #setMainDialogue {
@@ -114,12 +115,12 @@ body {
     height: 32px;
     width: 800px;
     background-color: brown;
-    bottom: 0px;
+    bottom: 0;
 }
  
 #mainCharacterAvatar {
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
     /*background-color: red;*/
     width: 72px;
     height: 68px;
@@ -127,13 +128,13 @@ body {
  
 #mainCharacterSpeech {
     left: 72px;
-    top: 0px;
+    top: 0;
  
 }
  
 #counterAvatar {
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     /*background-color: red;*/
     width: 72px;
     height: 68px;
@@ -145,14 +146,14 @@ body {
  
 #counterSpeech {
     right: 72px;
-    top: 0px;
+    top: 0;
 }
  
 #tilemap {
     width: 800px;
     height: 620px;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
  
 }
  
