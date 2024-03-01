@@ -212,7 +212,7 @@ function showMessage(targetBalloon, targetSound, message) {
 }
  
 /**
- * Sets the opacity to 0 so you don't see it anymore
+ * Sets the opacity to 0, so you don't see it anymore
  * @param {getElementById} targetBalloon
  * @param {getElementById} targetSound
  */
