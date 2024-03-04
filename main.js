@@ -116,15 +116,15 @@ gameWindow.onclick = function (e) {
             break;
  
         case "statue":
-            showMessage(mainCharacterSpeech, mcAudio, "Wow, a cool statue!");
+            showMessage(mainCharacterSpeech, mcAudio, "Wow, what a cool sign!");
             setTimeout(function () { counterAvatarImg.style.opacity = 1 }, 2 * sec);
             setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Hello... Player");
             setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "You can talk...?");
             setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "Yes.. wait you can hear me?");
-            setTimeout(showMessage, 16 * sec, mainCharacterSpeech, mcAudio, "Yeah I can");
+            setTimeout(showMessage, 16 * sec, mainCharacterSpeech, mcAudio, "Yeah I can.");
             setTimeout(showMessage, 20 * sec, counterSpeech, counterAudio, "This has never happened before..");
             setTimeout(showMessage, 24 * sec, mainCharacterSpeech, mcAudio, "How do I unlock the left house?");
-            setTimeout(showMessage, 28 * sec, counterSpeech, counterAudio, "Go to the right house, there is a key hidden in there.");
+            setTimeout(showMessage, 28 * sec, counterSpeech, counterAudio, "Walk to the left house and take the first left, the key is in that bush.");
             setTimeout(showMessage, 32 * sec, mainCharacterSpeech, mcAudio, "Thanks!");
  
             setTimeout(function () { counterAvatarImg.style.opacity = 0 }, 36 * sec);
