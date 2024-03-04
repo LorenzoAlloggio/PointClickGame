@@ -8,7 +8,7 @@ let gameState = {
     "keyPickedUp": false
 }
 
-//localStorage.removeItem(JSON.stringify(gameState)); //clear local storage
+localStorage.removeItem(JSON.stringify(gameState)); //clear local storage
 if(typeof(Storage) !== "undefined"){
 // code for localstorage/ sessionstorage
 
